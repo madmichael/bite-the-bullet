@@ -27,10 +27,10 @@ const Inventory = ({ equipment, inventory }) => {
         <tbody>
           {inventoryItems.map((item, idx) => (
             <tr key={idx} className="bg-gray-50">
-              <td className="border border-black p-2 print:py-px font-serif">
+              <td className="border border-black p-2 print:py-[0.1rem] font-serif">
                 {idx + 1}. {item.name}
               </td>
-              <td className="border border-black p-2 print:py-px text-center">
+              <td className="border border-black p-2 print:py-[0.1rem] text-center">
                 {item.slots > 0 ? item.slots : ''}
               </td>
             </tr>

@@ -11,7 +11,14 @@ const Equipment = ({ weapon, armor }) => {
   return (
     <>
       <Section title="Weapons">
-        <table className="w-full border-collapse text-sm">
+        <table className="w-full border-collapse text-sm table-fixed">
+          <colgroup>
+            <col style={{ width: '21%' }} />
+            <col style={{ width: '15%' }} />
+            <col style={{ width: '16%' }} />
+            <col style={{ width: '18%' }} />
+            <col style={{ width: '28%' }} />
+          </colgroup>
           <thead>
             <tr className="bg-gray-100 text-xs uppercase tracking-wider">
               <th className="border border-black p-2 print:py-0">Weapon</th>
@@ -23,11 +30,11 @@ const Equipment = ({ weapon, armor }) => {
           </thead>
           <tbody>
             <tr>
-              <td className="border border-black p-2 print:py-0 font-serif">{weapon.name}</td>
+              <td className="border border-black p-2 print:py-0 font-serif print:text-[11px]">{weapon.name}</td>
               <td className="border border-black p-2 print:py-0 text-center">{weapon.slots}</td>
               <td className="border border-black p-2 print:py-0 text-center">{weapon.shots || '-'}</td>
               <td className="border border-black p-2 print:py-0 text-center">{weapon.damage}</td>
-              <td className="border border-black p-2 print:py-0 text-xs">{weapon.traits}</td>
+              <td className="border border-black p-2 print:py-0 text-xs whitespace-normal break-words leading-tight align-top print:text-[10px]">{weapon.traits}</td>
             </tr>
           </tbody>
         </table>
