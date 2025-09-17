@@ -1,6 +1,7 @@
 import React from 'react';
+import EditableField from './EditableField';
 
-const CharacterQuickView = ({ character }) => {
+const CharacterQuickView = ({ character, onUpdate, allData }) => {
   if (!character) return null;
 
   return (
@@ -18,10 +19,24 @@ const CharacterQuickView = ({ character }) => {
           </div>
 
           <h3 className="text-brand-accent font-bold mt-4 mb-2">Equipment</h3>
-          <div className="space-y-1 text-sm">
-            <div>Armor: {character.equipment.armor.name}</div>
-            <div>Weapon: {character.equipment.weapon.name}</div>
-            <div>Lead: {character.equipment.lead}, Coin: {character.equipment.coin}</div>
+          <div className="space-y-2 text-sm">
+            <EditableField 
+              label="Armor"
+              value={character.equipment.armor}
+              options={allData.armors}
+              onUpdate={onUpdate}
+              category="equipment"
+              field="armor"
+            />
+            <EditableField 
+              label="Weapon"
+              value={character.equipment.weapon}
+              options={allData.weapons}
+              onUpdate={onUpdate}
+              category="equipment"
+              field="weapon"
+            />
+            <div className="pt-2">Lead: {character.equipment.lead}, Coin: {character.equipment.coin}</div>
           </div>
 
           <h3 className="text-brand-accent font-bold mt-4 mb-2">Inventory</h3>
@@ -35,19 +50,29 @@ const CharacterQuickView = ({ character }) => {
         <div>
           <h3 className="text-brand-accent font-bold mb-2">Characteristics</h3>
           <div className="space-y-2 text-sm">
-            <div><span className="text-brand-primary">Background:</span> {character.characteristics.background.name}</div>
-            <div><span className="text-brand-primary">Reputation:</span> {character.characteristics.reputation.name}</div>
-            <div><span className="text-brand-primary">Fortitude:</span> {character.characteristics.fortitude.name}</div>
-            <div><span className="text-brand-primary">Foible:</span> {character.characteristics.foible.name}</div>
-            <div><span className="text-brand-primary">Issue:</span> {character.characteristics.issue.name}</div>
+            <EditableField label="Background" value={character.characteristics.background} options={allData.backgrounds} onUpdate={onUpdate} category="characteristics" field="background" />
+            <EditableField label="Reputation" value={character.characteristics.reputation} options={allData.reputations} onUpdate={onUpdate} category="characteristics" field="reputation" />
+            <EditableField label="Fortitude" value={character.characteristics.fortitude} options={allData.fortitudes} onUpdate={onUpdate} category="characteristics" field="fortitude" />
+            <EditableField label="Foible" value={character.characteristics.foible} options={allData.foibles} onUpdate={onUpdate} category="characteristics" field="foible" />
+            <EditableField label="Issue" value={character.characteristics.issue} options={allData.issues} onUpdate={onUpdate} category="characteristics" field="issue" />
           </div>
 
           <h3 className="text-brand-accent font-bold mt-4 mb-2">Gear</h3>
-          <ul className="space-y-1 text-sm">
+          <div className="space-y-2 text-sm">
             {character.equipment.gear.map((item, idx) => (
-              <li key={idx}>• {item.name} ({item.slots} slots)</li>
+              <EditableField 
+                key={idx}
+                label={`Gear ${idx + 1}`}
+                value={item}
+                options={allData.gear}
+                onUpdate={(category, field, value) => {
+                  const newGear = [...character.equipment.gear];
+                  newGear[idx] = value;
+                  onUpdate('equipment', 'gear', newGear);
+                }}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       </div>
 

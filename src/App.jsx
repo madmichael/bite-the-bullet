@@ -23,6 +23,16 @@ const App = () => {
     }, 500);
   };
 
+  const handleCharacterUpdate = (category, field, value) => {
+    const newCharacter = { ...character };
+    if (category) {
+      newCharacter[category][field] = value;
+    } else {
+      newCharacter[field] = value;
+    }
+    setCharacter(newCharacter);
+  };
+
   const handlePrint = () => {
     window.print();
   };
@@ -83,7 +93,13 @@ const App = () => {
           )}
         </div>
 
-        {character && !showSheet && <CharacterQuickView character={character} />}
+        {character && !showSheet && 
+          <CharacterQuickView 
+            character={character} 
+            onUpdate={handleCharacterUpdate} 
+            allData={characterData} 
+          />
+        }
 
         {!character && <Welcome />}
       </div>

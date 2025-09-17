@@ -14,20 +14,20 @@ const Equipment = ({ weapon, armor }) => {
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="bg-gray-100 text-xs uppercase tracking-wider">
-              <th className="border border-black p-2">Weapon</th>
-              <th className="border border-black p-2">Slots</th>
-              <th className="border border-black p-2">Shots</th>
-              <th className="border border-black p-2">Damage</th>
-              <th className="border border-black p-2">Tags</th>
+              <th className="border border-black p-2 print:py-0">Weapon</th>
+              <th className="border border-black p-2 print:py-0">Slots</th>
+              <th className="border border-black p-2 print:py-0">Shots</th>
+              <th className="border border-black p-2 print:py-0">Damage</th>
+              <th className="border border-black p-2 print:py-0">Tags</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-black p-2 font-serif">{weapon.name}</td>
-              <td className="border border-black p-2 text-center">{weapon.slots}</td>
-              <td className="border border-black p-2 text-center">{weapon.shots || '-'}</td>
-              <td className="border border-black p-2 text-center">{weapon.damage}</td>
-              <td className="border border-black p-2 text-xs">{weapon.traits}</td>
+              <td className="border border-black p-2 print:py-0 font-serif">{weapon.name}</td>
+              <td className="border border-black p-2 print:py-0 text-center">{weapon.slots}</td>
+              <td className="border border-black p-2 print:py-0 text-center">{weapon.shots || '-'}</td>
+              <td className="border border-black p-2 print:py-0 text-center">{weapon.damage}</td>
+              <td className="border border-black p-2 print:py-0 text-xs">{weapon.traits}</td>
             </tr>
           </tbody>
         </table>
@@ -37,18 +37,18 @@ const Equipment = ({ weapon, armor }) => {
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="bg-gray-100 text-xs uppercase tracking-wider">
-              <th className="border border-black p-2">Armor</th>
-              <th className="border border-black p-2">Slots</th>
-              <th className="border border-black p-2">Protection</th>
-              <th className="border border-black p-2">Type</th>
+              <th className="border border-black p-2 print:py-0">Armor</th>
+              <th className="border border-black p-2 print:py-0">Slots</th>
+              <th className="border border-black p-2 print:py-0">Protection</th>
+              <th className="border border-black p-2 print:py-0">Type</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-black p-2 font-serif">{armor.name}</td>
-              <td className="border border-black p-2 text-center">{armor.slots}</td>
-              <td className="border border-black p-2 text-center">{armor.armor}</td>
-              <td className="border border-black p-2 text-xs">Physical</td>
+              <td className="border border-black p-2 print:py-0 font-serif">{armor.name}</td>
+              <td className="border border-black p-2 print:py-0 text-center">{armor.slots}</td>
+              <td className="border border-black p-2 print:py-0 text-center">{armor.armor}</td>
+              <td className="border border-black p-2 print:py-0 text-xs">Physical</td>
             </tr>
           </tbody>
         </table>

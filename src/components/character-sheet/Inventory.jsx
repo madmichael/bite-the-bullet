@@ -17,20 +17,20 @@ const Inventory = ({ equipment, inventory }) => {
   return (
     <div className="mb-6">
       <h3 className="text-center font-bold mb-4 uppercase tracking-widest text-gray-800">Inventory</h3>
-      <table className="w-full border-collapse mb-4 text-sm">
+      <table className="w-full border-collapse mb-4 print:mb-2 text-sm print:text-xs">
         <thead>
           <tr className="bg-gray-100 text-xs uppercase tracking-wider">
-            <th className="border border-black p-2 text-left">Item</th>
-            <th className="border border-black p-2 w-16">Slots</th>
+            <th className="border border-black p-2 print:py-px text-left">Item</th>
+            <th className="border border-black p-2 print:py-px w-16">Slots</th>
           </tr>
         </thead>
         <tbody>
           {inventoryItems.map((item, idx) => (
             <tr key={idx} className="bg-gray-50">
-              <td className="border border-black p-2 font-serif">
+              <td className="border border-black p-2 print:py-px font-serif">
                 {idx + 1}. {item.name}
               </td>
-              <td className="border border-black p-2 text-center">
+              <td className="border border-black p-2 print:py-px text-center">
                 {item.slots > 0 ? item.slots : ''}
               </td>
             </tr>
@@ -59,12 +59,12 @@ const Inventory = ({ equipment, inventory }) => {
         </div>
       </div>
       
-      <div className="text-xs text-center mt-4 text-gray-600">
+      <div className="text-xs text-center mt-4 print:mt-2 text-gray-600">
         Max carry is equal to Vigor (minimum 10). Load is all slots carried. 
         Reserve is max carry minus load. Use Reserve to power Acts of Faith.
       </div>
 
-      <div className="text-center mt-4">
+      <div className="text-center mt-4 print:mt-2">
         <span className="font-bold uppercase text-xs tracking-wider">Coin: </span>
         <span className="font-serif font-bold">{equipment.coin}</span>
       </div>

@@ -28,6 +28,11 @@
      with Tailwind's base styles, but will have lower specificity
      than utility classes, preventing overrides.
 */
+@page {
+  margin: 0.2in;
+  size: letter;
+}
+
 @layer base {
   body {
     @apply bg-brand-background text-brand-text font-sans;
@@ -47,6 +52,8 @@
     body {
       print-color-adjust: exact;
       -webkit-print-color-adjust: exact;
+      font-size: 11px !important;
+      line-height: 1.3 !important;
     }
 
     * {

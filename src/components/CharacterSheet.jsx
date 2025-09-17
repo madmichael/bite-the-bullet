@@ -11,10 +11,10 @@ const CharacterSheet = ({ character }) => {
 
 
   return (
-    <div className="max-w-4xl mx-auto bg-white text-black p-8 shadow-2xl font-mono">
+    <div className="max-w-4xl mx-auto bg-white text-black p-8 print:p-4 shadow-2xl font-mono">
       <SheetHeader />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-8 print:gap-4">
         {/* Left Column */}
         <div>
           <AttributeScores attributes={character.attributes} />
