@@ -1,0 +1,59 @@
+/*
+  1. Define the theme first.
+*/
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-background: #2a2a2a;
+  --color-brand-surface: #383838;
+  --color-brand-primary: #c0a080;
+  --color-brand-secondary: #8c6f5a;
+  --color-brand-text: #e0e0e0;
+  --color-brand-text-muted: #a0a0a0;
+  --color-brand-accent: #e5b773;
+
+  --font-sans: 'Roboto', sans-serif;
+  --font-serif: 'Roboto Slab', serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+/*
+  2. Include Tailwind's base, components, and utilities.
+     This is where Preflight (the reset) and all the utility
+     classes like p-6 are injected.
+*/
+
+/*
+  3. Add custom base styles. These will be intelligently merged
+     with Tailwind's base styles, but will have lower specificity
+     than utility classes, preventing overrides.
+*/
+@layer base {
+  body {
+    @apply bg-brand-background text-brand-text font-sans;
+  }
+}
+
+/*
+  4. Add custom utilities. These will be processed alongside
+     Tailwind's own utilities.
+*/
+@layer utilities {
+  @media print {
+    .print\:hidden {
+      display: none !important;
+    }
+
+    body {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    * {
+      color: #000 !important;
+      background-color: #fff !important;
+      text-shadow: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
