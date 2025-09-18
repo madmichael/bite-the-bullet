@@ -1,12 +1,18 @@
 import React from 'react';
 
 const CharacteristicItem = ({ label, name }) => (
-  <div className="border border-black p-2 bg-gray-50">
-    <div className="flex justify-between items-center">
-      <span className="text-xs uppercase tracking-wider text-gray-700">{label}</span>
-      <span className="text-xs font-mono bg-gray-200 px-1 rounded">Rank: 1</span>
+  <div className="border border-black p-2 bg-gray-50 flex items-center gap-3">
+    <div className="flex-1">
+      <div className="flex justify-between items-center">
+        <span className="text-xs uppercase tracking-wider text-gray-700">{label}</span>
+        <span className="text-xs font-mono bg-gray-200 px-1 rounded">Rank: 1</span>
+      </div>
+      <div className="font-bold font-serif mt-1">{name}</div>
     </div>
-    <div className="font-bold font-serif mt-1">{name}</div>
+    <div className="flex flex-col items-center gap-1 min-w-[60px]">
+      <span className="text-xs text-gray-600 uppercase tracking-wider">Tapped</span>
+      <div className="w-5 h-5 border-2 border-black bg-white"></div>
+    </div>
   </div>
 );
 
