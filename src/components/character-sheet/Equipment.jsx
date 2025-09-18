@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Section = ({ title, children }) => (
-  <div className="mb-6">
-    <h3 className="text-center font-bold mb-4 uppercase tracking-widest text-gray-800">{title}</h3>
+  <div className="mb-2">
+    <h3 className="text-center font-bold mb-2 uppercase tracking-widest text-gray-800">{title}</h3>
     {children}
   </div>
 );

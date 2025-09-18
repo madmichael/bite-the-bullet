@@ -11,7 +11,7 @@ const AttributeScores = ({ attributes }) => {
   );
 
   return (
-    <div className="mb-6">
+    <div className="mb-2">
       <h3 className="text-center font-bold mb-2 uppercase tracking-widest text-gray-800">Attribute Scores</h3>
       <div className="flex justify-around">
         {renderAttribute("Vigor", attributes.vigor)}
@@ -19,7 +19,7 @@ const AttributeScores = ({ attributes }) => {
         {renderAttribute("Faith", attributes.faith)}
         {renderAttribute("Sand", attributes.sand)}
       </div>
-      <div className="text-xs print:text-[9px] print:leading-tight text-center mt-4 text-gray-600">
+      <div className="text-xs print:text-[8px] print:leading-tight text-center mt-4 text-gray-600">
         Roll 3d6 for the first three; roll 2d6 for Sand.<br/>
         To Save, roll d20 equal to or under the current attribute score.
       </div>

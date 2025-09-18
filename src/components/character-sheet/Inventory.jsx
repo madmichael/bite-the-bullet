@@ -16,7 +16,7 @@ const Inventory = ({ equipment, inventory }) => {
 
   return (
     <div className="mb-6">
-      <h3 className="text-center font-bold mb-4 uppercase tracking-widest text-gray-800">Inventory</h3>
+      <h3 className="text-center font-bold mb-2 uppercase tracking-widest text-gray-800">Inventory</h3>
       <table className="w-full border-collapse mb-4 print:mb-2 text-sm print:text-xs">
         <thead>
           <tr className="bg-gray-100 text-xs uppercase tracking-wider">
